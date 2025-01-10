@@ -1,0 +1,232 @@
+@use "../../css-config/mixin.scss";
+
+#nav-route {
+  display: flex;
+  justify-content: space-evenly;
+
+  .nav {
+    height: 100vh;
+    width: 20%;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0px;
+    transition: left 0.2s ease-in-out;
+
+    @include mixin.md {
+      width: 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #logo {
+      height: 10%;
+      width: 98%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: logo 1s ease;
+      gap: 10px;
+
+      @include mixin.md {
+        height: 20%;
+        width: 98%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      img {
+        height: 50px;
+        width: 50px;
+
+        @include mixin.md {
+          height: 70px;
+          width: 70px;
+        }
+      }
+
+      p {
+        font-size: 0.6rem;
+        font-weight: bold;
+        position: relative;
+        animation-delay: 0.2s;
+        animation: logotext 2s ease-in-out;
+
+        @include mixin.md {
+          font-size: 1rem;
+        }
+      }
+
+      @keyframes logotext {
+        0% {
+          transform: scale(0);
+        }
+        80% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+
+    @keyframes logo {
+      0% {
+        left: -80px;
+        bottom: -20px;
+      }
+      100% {
+        left: 0px;
+        bottom: 0px;
+      }
+    }
+
+    #content {
+      height: 90%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+
+      @include mixin.md {
+        height: 80%;
+        width: 100%;
+      }
+
+      ul {
+        height: 50%;
+        width: 82%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: tags 1s ease;
+        position: relative;
+        gap: 80px;
+
+        @include mixin.md {
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 30px;
+        }
+
+        .link {
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+          transform: rotate(-90deg);
+          transition: letter-spacing 0.3s ease-in-out;
+
+          @include mixin.md {
+            font-size: 1.2rem;
+            transform: none;
+          }
+
+          &:hover {
+            letter-spacing: 2px;
+          }
+        }
+      }
+
+      @keyframes tags {
+        0% {
+          left: -80px;
+        }
+        100% {
+          left: 0px;
+        }
+      }
+      #toogle {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .btn {
+          height: 80px;
+          position: absolute;
+          font-size: 0.5rem;
+          font-weight: bold;
+          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          cursor: pointer;
+          gap: 12px;
+          border-radius: 0px 30px 30px 0px;
+          animation: btn 2s ease-in-out;
+
+          @include mixin.md {
+            height: 110px;
+            font-size: 0.8rem;
+          }
+        }
+        @keyframes btn {
+          0% {
+            transform: scale(0);
+          }
+          80% {
+            transform: scale(1.2);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        .btn span {
+          transform: rotate(90deg);
+          display: inline-block;
+          margin-top: 8px;
+        }
+
+        #open-btn {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  .navbar {
+    left: -63px;
+
+    @include mixin.md {
+      left: -168px;
+    }
+
+    #content #toogle #open-btn {
+      visibility: visible;
+      margin-left: 18px;
+    }
+    #content ul {
+      width: 100%;
+
+      @include mixin.md {
+        width: 90%;
+      }
+    }
+    #close-btn {
+      visibility: hidden;
+    }
+  }
+  #routes {
+    width: 85%;
+  }
+}

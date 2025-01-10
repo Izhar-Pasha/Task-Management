@@ -1,0 +1,25 @@
+@use "../../css-config/mixin.scss";
+
+.content {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  background-image: url("../../assets/Intro.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
