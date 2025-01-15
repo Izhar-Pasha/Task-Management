@@ -12,7 +12,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:5174",
-  "https://yourfrontenddomain.com",
+  "https://task-management-brown-eight.vercel.app/",
 ];
 app.use(
   cors({
