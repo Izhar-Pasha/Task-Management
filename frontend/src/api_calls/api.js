@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://task-management-g2gr.onrender.com",
 });
 
 export const registerUser = async (userData) => {
