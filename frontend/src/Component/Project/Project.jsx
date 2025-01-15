@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Project.scss";
-import Edit from "../../assets/edit.png";
+import Edit from "../../assets/Edit.png";
 import Delete from "../../assets/Delete.png";
 import { Link } from "react-router-dom";
 import { getAll, newProject, updateProject } from "../../api_calls/api";
