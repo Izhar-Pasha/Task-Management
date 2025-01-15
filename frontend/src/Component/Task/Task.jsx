@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAll, getAllTasks, newTask } from "../../api_calls/api";
 import "./Task.scss";
-import Edit from "../../assets/edit.png";
+import Edit from "../../assets/Edit.png";
 import Delete from "../../assets/Delete.png";
 import { Link } from "react-router-dom";
 
