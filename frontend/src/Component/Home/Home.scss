@@ -116,7 +116,7 @@
     }
     #milestones {
       height: auto;
-      width: 80%;
+      width: 90%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -126,14 +126,14 @@
 
       .mile {
         height: 90px;
-        width: 80%;
+        width: 70%;
         padding: 10px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         border-radius: 10px;
         // background-color: rgba(8, 94, 104, 0.655);
-        background-color: rgb(16, 61, 138);
+        background-color: rgb(10, 38, 85);
 
         .img {
           width: 33%;
@@ -142,8 +142,8 @@
           align-items: center;
 
           img {
-            height: 50px;
-            width: 50px;
+            height: 90px;
+            width: 90px;
             display: flex;
             justify-content: center;
             align-content: center;
