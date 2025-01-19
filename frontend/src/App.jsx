@@ -8,6 +8,8 @@ import Home from "./Component/Home/Home.jsx";
 import Project from "./Component/Project/Project.jsx";
 import Task from "./Component/Task/Task.jsx";
 import Setting from "./Component/Setting/Setting.jsx";
+import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/api/Setting" element={<Setting />} />
         </Route>
       </Routes>
+      <Analytics />
+      <Toaster />
     </Router>
   );
 }

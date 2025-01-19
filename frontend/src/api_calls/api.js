@@ -1,7 +1,13 @@
 import axios from "axios";
+import toast from "react-hot-toast";
+
+// baseURL: "https://task-management-g2gr.onrender.com",
+const isDev = window.location.hostname === "localhost";
 
 const API = axios.create({
-  baseURL: "https://task-management-g2gr.onrender.com",
+  baseURL: isDev
+    ? "http://localhost:3000"
+    : "https://task-management-g2gr.onrender.com",
 });
 
 export const registerUser = async (userData) => {
@@ -25,8 +31,9 @@ export const loginUser = async (loginData) => {
     console.log("Token stored:", token);
     return response;
   } catch (error) {
-    alert("Error:", error.response?.message || error.message);
+    // alert("Error:", error.response?.message || error.message);
     console.log("Error logging User:", error.response?.data || error.message);
+    toast.error("Unable to login");
     throw error;
   }
 };

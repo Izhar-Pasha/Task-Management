@@ -2,6 +2,7 @@ import "./Registration.scss";
 import { registerUser } from "../../api_calls/api";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -18,13 +19,13 @@ const Register = () => {
       };
       const response = await registerUser(userData);
       console.log("Login SUccessfull", response);
-      alert("Successfully Registered!");
+      toast.success("Successfully Registered!");
       setName("");
       setEmail("");
       setPassword("");
     } catch (error) {
       console.log("Failed to login:", error.response?.message || error.message);
-      throw error;
+      toast.error("Failed to register:", error);
     }
   };
   return (

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { loginUser } from "../../api_calls/api";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,12 +22,12 @@ const Login = () => {
         navigate("/api/dashboard");
       }
       console.log("Login Successfull", data);
-      alert("Successfully Login!");
+      toast.success("Login Successfull!");
       setEmail("");
       setPassword("");
     } catch (error) {
       console.log("Login Failed:", error.message);
-      alert("Login Failed:", error.message);
+      toast.error("Login Failed:", error.message);
     }
   };
 
@@ -64,6 +65,7 @@ const Login = () => {
           </Link>
         </div>
       </form>
+      {/* <button onClick={notify}>Check the Toast</button> */}
     </div>
   );
 };
