@@ -2,12 +2,12 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 // baseURL: "https://task-management-g2gr.onrender.com",
-const isDev = window.location.hostname === "localhost";
+// const isDev = window.location.hostname === "localhost";
 
 const API = axios.create({
-  baseURL: isDev
-    ? "http://localhost:3000"
-    : "https://task-management-g2gr.onrender.com",
+  // baseURL: isDev
+  //   ? "http://localhost:3000"
+  baseURL: "https://task-management-g2gr.onrender.com",
 });
 
 export const registerUser = async (userData) => {
